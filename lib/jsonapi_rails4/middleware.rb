@@ -3,7 +3,7 @@ module JsonapiRails4
     def initialize(app)
       @app = app
     end
-    
+
     def call(env)
       @env = env
       process_json if json? && jsonapi?
@@ -14,8 +14,13 @@ module JsonapiRails4
 
     def process_json
       params = {}
-      params[json_params['data']['type'].singularize] = json_params['data']['attributes']
+      params[resource_name] = json_params['data']['attributes']
+      params[resource_name]['id'] = json_params['data']['id'] if json_params['data']['id']
       @env['rack.input'] = StringIO.new(params.to_json)
+    end
+
+    def resource_name
+      json_params['data']['type'].singularize
     end
 
     def json?
