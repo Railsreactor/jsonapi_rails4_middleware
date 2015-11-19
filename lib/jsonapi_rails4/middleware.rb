@@ -32,8 +32,9 @@ module JsonapiRails4
     end
 
     def json_params
-      @params ||= JSON.parse(request.body.read)
+      body = request.body.read
       request.body.rewind
+      @params ||= body.empty? ? {} : JSON.parse(body)
       @params
     end
 
