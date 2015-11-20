@@ -23,9 +23,9 @@ describe JsonapiRails4::Middleware do
 
         it 'changes request body' do
           expect(JSON.parse(response_body)).to eq('user' => {
-                                                    'email' => 'john.doe@example.com',
-                                                    'password' => '12345678'
-                                                  })
+            'email' => 'john.doe@example.com',
+            'password' => '12345678'
+          })
         end
       end
 
