@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'jsonapi_rails4'
+require 'jsonapi_rails4_middleware'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'jsonapi-rails4-middleware'
-  spec.version       = JsonapiRails4::VERSION
+  spec.name          = 'jsonapi_rails4_middleware'
+  spec.version       = JsonapiRails4Middleware::VERSION
   spec.authors       = ['Denis Sergienko']
   spec.email         = ['olol.toor@gmail.com']
 
   spec.summary       = 'Middleware which converts jsonapi input params format to rails form helper params.'
-  spec.homepage      = 'https://github.com/Railsreactor/jsonapi-rails4-middleware'
+  spec.homepage      = 'https://github.com/Railsreactor/jsonapi_rails4_middleware'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
