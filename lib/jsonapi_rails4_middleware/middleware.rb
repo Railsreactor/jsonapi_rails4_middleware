@@ -1,4 +1,4 @@
-module JsonapiRails4
+module JsonapiRails4Middleware
   class Middleware
     def initialize(app)
       @app = app
