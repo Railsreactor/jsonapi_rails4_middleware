@@ -1,4 +1,6 @@
-describe JsonapiRails4Middleware::Middleware do
+require 'spec_helper'
+
+RSpec.describe JsonapiRails4Middleware::Middleware do
   let(:app) { ->(input) { [200, input, 'app'] } }
   let(:response_body) { subject.call(env)[1]['rack.input'].read }
 

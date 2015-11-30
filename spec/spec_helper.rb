@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'jsonapi_rails4'
+require 'jsonapi_rails4_middleware'
 require 'pry'
 
 RSpec.configure do |config|
